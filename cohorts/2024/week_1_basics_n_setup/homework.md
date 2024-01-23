@@ -25,6 +25,9 @@ Which tag has the following text? - *Automatically remove the container when it 
 - `--rmc`
 - `--rm`
 
+"
+q
+"
 
 ## Question 2. Understanding docker first run 
 
@@ -38,6 +41,7 @@ What is version of the package *wheel* ?
 - 23.0.1
 - 58.1.0
 
+"0.42.0"
 
 # Prepare Postgres
 

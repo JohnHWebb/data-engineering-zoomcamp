@@ -14,3 +14,12 @@
 serving_dir
 .ipynb_checkpoints/
 !week_6_stream_processing/avro_example/data/rides.csv
+*.json
+io_config.yaml
+*.ssh*
+*.csv.gz
+*.csv
+*ssh*
+/workspaces/data-engineering-zoomcamp/C:Usersjwebb.sshzoomcamp_gcp
+/workspaces/data-engineering-zoomcamp/C:Usersjwebb.sshzoomcamp_gcp.pub
+/workspaces/data-engineering-zoomcamp/week_1_basics_n_setup/2_docker_sql/output.csv.gz

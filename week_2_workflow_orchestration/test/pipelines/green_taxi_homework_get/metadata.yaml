@@ -1,0 +1,110 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - to_snake_case
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: green_taxi_to_pandas
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: green_taxi_to_pandas
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - passenger_trip_non_zero
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: to_snake_case
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - green_taxi_to_pandas
+  uuid: to_snake_case
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - taxi_to_gcs_partitioned
+  - green_taxi_to_big_query
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: passenger_trip_non_zero
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - to_snake_case
+  uuid: passenger_trip_non_zero
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: green_taxi_to_big_query
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - passenger_trip_non_zero
+  uuid: green_taxi_to_big_query
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: taxi_to_gcs_partitioned
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - passenger_trip_non_zero
+  uuid: taxi_to_gcs_partitioned
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config:
+  pipeline_run_limit: 5
+conditionals: []
+created_at: '2024-01-09 16:00:53.074912+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: green_taxi_homework_get
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+updated_at: '2024-01-14 17:13:58'
+uuid: green_taxi_homework_get
+variables_dir: /home/vscode/.mage_data/test
+widgets: []

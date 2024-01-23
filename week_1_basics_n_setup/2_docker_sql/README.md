@@ -30,6 +30,9 @@ docker run -it \
   -p 5432:5432 \
   postgres:13
 ```
+docker run -it -e POSTGRES_USER="root" -e POSTGRES_PASSWORD="root" -e POSTGRES_DB="ny_taxi" -v "C:\Users\jwebb\Git Repos\data-engineering-zoomcamp\week_1_basics_n_setup\2_docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data" -p 5432:5432 postgres:13
+
+docker run -it -e POSTGRES_USER="root" -e POSTGRES_PASSWORD="root" -e POSTGRES_DB="ny_taxi" -v "postgres-volume:/var/lib/postgresql/data" -p 5432:5432 postgres:13
 
 If you have the following error:
 
@@ -140,7 +143,7 @@ docker run -it \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
   -e POSTGRES_DB="ny_taxi" \
-  -v c:/Users/alexe/git/data-engineering-zoomcamp/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -v postgres-volume:/var/lib/postgresql/data \
   -p 5432:5432 \
   --network=pg-network \
   --name pg-database \
@@ -202,7 +205,7 @@ You can solve it with `.dockerignore`:
 Run the script with Docker
 
 ```bash
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz"
 
 docker run -it \
   --network=pg-network \
@@ -212,7 +215,7 @@ docker run -it \
     --host=pg-database \
     --port=5432 \
     --db=ny_taxi \
-    --table_name=yellow_taxi_trips \
+    --table_name=green_taxi_trips \
     --url=${URL}
 ```
 

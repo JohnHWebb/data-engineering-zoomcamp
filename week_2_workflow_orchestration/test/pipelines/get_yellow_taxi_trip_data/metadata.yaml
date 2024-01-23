@@ -1,0 +1,42 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: taxi_to_gcs
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: taxi_to_gcs
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config:
+  pipeline_run_limit: 2
+conditionals: []
+created_at: '2024-01-09 16:00:53.074912+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Get Yellow Taxi Trip Data
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+updated_at: '2024-01-09T18:00:50+00:00'
+uuid: get_yellow_taxi_trip_data
+variables_dir: /home/vscode/.mage_data/test
+widgets: []
